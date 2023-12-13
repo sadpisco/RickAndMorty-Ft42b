@@ -1,0 +1,16 @@
+.divAbout {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-image: url('../../assets/Outer-Space-Wallpaper.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;    
+}
+
+.containerAbout {
+    position: relative;
+    overflow: auto;
+    min-height: 80.5vh;
+}
+

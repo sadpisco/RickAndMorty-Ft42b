@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+.divCharCards{
+    position: relative;
+    background-color: rgb(30, 30, 30);
+    margin-bottom: 50px;
+}
+
+.cardsContainer{
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    margin: 0 10rem;
+    gap: 0rem;
+}
+
+.floro{
+    font-family: 'Patrick Hand', sans-serif;
+    font-size: 55px;
+}
+.floroContainer{
+    padding-top:20px;
+}

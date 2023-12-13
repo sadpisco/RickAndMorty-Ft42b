@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navContainer{
+    position:relative;
+    z-index: 3;
+    min-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(30, 30, 30, 0.781);
+    height: 90px;
+    padding: 0 2rem;
+    color: white;
+    box-shadow: 0px 0px 20px 2px rgb(0, 255, 30);
+}
+
+.divTitle{
+    position: relative;
+    align-items: center;
+    font-size: 25px;
+    bottom:-10px;
+    left: 30px; 
+    text-decoration: none;
+
+}
+.title{
+    color: rgb(255, 255, 255);
+    font-style: normal;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: 'Patrick Hand', sans-serif;
+    font-size: 33px;
+}
+.title:hover{
+    color:rgb(70, 225, 80)
+}
+
+.divButtons{
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    bottom: -10px;
+    padding: 0px 20px;
+} 
+
+.link{
+    margin: 0 1rem;
+    font-family: 'Patrick Hand', sans-serif;
+    font-size:25px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+.link:hover{
+    color:rgb(70, 225, 80);
+}
+
+.responsiveBtn{
+    position: relative;
+    padding: 5px;
+    bottom:-10px;
+    color: white;
+    background-color: rgb(146, 146, 146);
+    outline: none;
+    visibility: hidden;
+    opacity: 0;
+    cursor: pointer;
+}
+

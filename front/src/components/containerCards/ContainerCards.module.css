@@ -1,0 +1,12 @@
+
+.divContainer{
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    margin: 0 10rem;
+    gap: 0rem;
+
+}

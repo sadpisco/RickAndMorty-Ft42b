@@ -1,0 +1,68 @@
+
+.divLanding {
+    position: relative;
+    background-color: rgb(30, 30, 30);
+}
+
+.divOne {
+    background-image: url('../../assets/3840x2160-rick-and-morty-in-a-portal-v0-5ar7o65lpt2b1.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    position: relative;
+    top: -70px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+
+
+}
+.selected{
+    position: relative;
+    background-color: rgba(30, 30, 30, 0.756);
+    width: 1100px;
+    height: 280px;
+    border-radius: 50px;
+    margin-top: 20px;
+}
+.title{
+    font-family: 'Patrick Hand', sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+
+}
+
+.title2{
+    font-family: 'Patrick Hand', sans-serif;
+    font-size: 25px;
+    margin: 0 50px;
+}
+
+.btnGo{
+    position: relative;
+    font-size: 20px;
+    margin: 25px;
+    height: 45px;
+    width: 150px;
+    color: white;
+    background-color: black;
+    border-radius: 25px;
+    cursor: pointer;
+}
+.btnGo:hover{
+    color: rgb(0, 255, 30);
+    border-style: solid;
+    border-width: 5px;
+    box-shadow: 0px 0px 15px 0px rgb(0, 255, 30);
+}
+.divTwo{
+    position: relative;
+    top: -50px;
+}
+.divTwoTitle{
+    font-family: 'Patrick Hand', sans-serif;
+    font-size: 50px;
+}
