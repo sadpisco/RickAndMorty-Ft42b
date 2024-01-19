@@ -1,5 +1,5 @@
 const axios = require('axios');
-const { Character } = require('../database');
+const { Character, Location, Episode } = require('../database');
 
 const registerCharactersDB = async function (req, res) {
     try {
@@ -28,5 +28,6 @@ const registerCharactersDB = async function (req, res) {
         res.status(404).send(error.message);
     };
 };
+
 
 module.exports = registerCharactersDB;

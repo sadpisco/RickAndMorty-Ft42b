@@ -2,13 +2,15 @@
 const { Router } = require("express");
 const axios = require('axios');
 const router = Router();
-const registerCharactersDB = require('../controllers/registerCharactersDB');
 const playground = require('../controllers/playground');
+const registerCharactersDB = require('../controllers/registerCharactersFromApi');
+const registerEpisodesAndRelations = require('../controllers/registerEpisodeFromApi');
+const registerLocationsFromApi = require("../controllers/registerLocationsFromApi");
 
 //Main Lobby
 router.get('/', async(req, res) => {
 try {
-    res.status(202).send(`Main Lobby`);
+    res.status(202).json("Main Lobby");
 } catch (error) {
     res.status(404).send(error.message);
 }
@@ -192,9 +194,10 @@ router.get('/IndividualEpisodeId/:id', async (req, res) => {
 
 
 //DATABASE
-//This function will register every 826 characters on the DB with no relations.
-router.get('/registerCharacters', registerCharactersDB);
-
+//Here we brought all the information and relations from the API to the dabase.
+router.get('/registerCharacters', registerCharactersDB); //First
+router.get('/registerEpisodes', registerEpisodesAndRelations); //Second
+router.get('/registerLocations', registerLocationsFromApi); //Third
 //PLAYGROUND
 router.get('/playground', playground);
 
