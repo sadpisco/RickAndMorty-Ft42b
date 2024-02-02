@@ -1,28 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
 .divCardsTitle{
     font-family: 'Patrick Hand', sans-serif;
     font-size: 50px;
     padding-top: 25px;
+    
+}
+.searchContainer{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('../../assets/wallpapers/stars-purple-cosmos-hd-wallpaper-preview.jpg');
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size:cover;
+}
+.divSearch{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 8vh;
+
 }
 .input{
-    position: relative;
     height: 50px;
-    width: 500px;
+    max-width: 400px;
+    width: 80vw;
     margin: 20px;
     border-style: solid;
-    border-radius: 20px;
+    border-radius: 7px;
+    border-color: white;
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    background-color: rgba(167, 167, 167, 0.221);
 
 }
 .searchBtn{
     position: relative;
-    font-size: 20px;
-    height: 53px;
-    width: 70px;
+    height: 50px;
+    width: 60px;
     color: white;
-    background-color: rgb(49, 49, 49);
-    border-radius: 20px;
+    background-color: rgba(167, 167, 167, 0.301);
+    border-radius: 8px;
     border-style: solid;
+    border-color: white;
     cursor: pointer;
     margin-left:-10px;
     font-size: 20px;
@@ -30,18 +54,72 @@
 .searchBtn:hover{
     color: rgb(0, 255, 30);
     border-style: solid;
-    border-width: 5px;
+    border-width: 3px;
     box-shadow: 0px 0px 15px 0px rgb(0, 255, 30);
 }
-
+.input:hover{
+    color: white;
+    border-style: solid;
+    border-width: 3px;
+    box-shadow: 0px 0px 15px 0px rgb(0, 255, 30);
+}
+@media only screen and (max-width: 768px) {
+    .divSearchText{
+        font-size: 20px;
+    }
+}
 .divSearchTitle{
     font-family: 'Patrick Hand', sans-serif;
-    font-size: 65px;
+    font-size: 45px;
+    width: 90%;
     padding-top: 25px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: rgb(0, 255, 60) 1px 0 10px;
+    color: greenyellow;
 }
 
 .divSearchText{
     font-family: 'Patrick Hand', sans-serif;
+    font-size: 30px;
+    margin-bottom: -5px;
+}
+.divCardsTitle{
+    width: 100%;
+    text-align: center;
+}
+.searchInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: 90%;
+}
+.Links{
+    display: flex;
+    place-items: center;
+    gap: 5vw;
+}
+.divSearchLinks{
+    color: white;
     font-size: 20px;
-    margin-bottom: -10px;
+    width: auto;
+    text-align: center;
+    text-decoration: none;
+
+}
+.h1{
+    font-family: 'Patrick Hand', sans-serif;
+}
+.divSearchLinks:hover{
+    text-shadow: rgb(0, 255, 60) 1px 0 10px;
+    color: greenyellow;
+}
+.inputAndBtn{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }

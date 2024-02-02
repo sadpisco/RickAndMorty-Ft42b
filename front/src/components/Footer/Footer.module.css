@@ -1,59 +1,118 @@
 @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
 .divFooter{
-    position:relative;
-    min-width: 100vw;
+    width: 100%;
+    position: static;
+    height: auto;
+    /* height: 140px; */
+    bottom: 0px;
+    left: 0px;
     box-shadow: 0px 0px 20px 2px rgb(0, 255, 30);
-    background-color: rgba(30, 30, 30, 0.781);
-}
-.container{
-    position: relative;
-    display:flex;
-    justify-content: space-evenly;
+    background-color: rgba(32, 32, 32, 0.781);
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    justify-content: center;
+
+}
+.footerContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: -1vh;
 }
 
-.firm{
-    position: relative;
-    width: 30%;
+.childrenDivOne{
+    height: 80px;
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+
 .name{
-    font-size: 40px;
+    font-size: 36px;
     font-family: 'Patrick Hand', sans-serif;
+    width: auto;
+    height: auto;
+    margin: 0;
 }
 
 .grade{
-    font-size: 20px;
+    margin: 0;
 }
 
+.childrenDivTwo{
+    height: 100%;
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.childrenDivThree{
+    height: 80px;
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.links{
+    height: auto;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1vh;
+}
 .link{
+    height: 30px;
+    width: 20%;
     text-decoration: none;
-    margin: 0 2rem;
     color: white;
-    cursor: pointer;
-}
 
-.floro{
-    width: 30%;
-    padding: 15px;
-    font-size: 12px;
-}
-.title{
-    position: relative;
-    font-size: 30px;
-    bottom: 5px;
-    font-family: 'Patrick Hand', sans-serif;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
 
-.titleFloro{
-    font-size: 30px;
-    font-family: 'Patrick Hand', sans-serif;
-
+}
+.link:hover{
+    text-shadow: rgb(0, 255, 60) 1px 0 10px;
+    color: greenyellow;
 }
 
 .copyright{
-    font-size: 12px;
-    background-color: rgb(30, 30, 30);
+    width: auto;
+    height: 30px;
+    font-size: 18px;
+}
+@media only screen and (max-width: 768px) {
+    .footerContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 2vh;
 
+    }
+    .childrenDivOne{
+        width: 100%;
+    }
+    .childrenDivTwo{
+        width: 100%;
+    }
+    .childrenDivThree{
+        visibility: hidden;
+        position: absolute;
+    }
 }

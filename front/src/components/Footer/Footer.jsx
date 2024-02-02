@@ -1,43 +1,31 @@
 import React from 'react';
-import style from './Footer.module.css'
+import styles from './Footer.module.css'
 import{ Link } from 'react-router-dom';
 
 export default function Footer(){
     return(
-        <footer className = {style.divFooter}>
-            <div className = {style.container}> 
-
-            <div className ={style.firm}>
-            <h3 className = {style.name}>Leonardo Risco</h3>
-            <h3 className = {style.grade}>FullStack Web Developer</h3>
+        <footer className = {styles.divFooter}>
+            <div className = {styles.footerContainer}>
+            <div className = {styles.childrenDivOne}>
+                <h1 className = {styles.name}>Leonardo Risco</h1>
+                <h3 className = {styles.grade}>FullStack Engineer</h3>
             </div>
-
-            <div className = {style.links}>
-            <h2 className = {style.title}>Navigate</h2>
-            <Link to = '/' className ={style.link}>
-            Home
-            </Link>
-            <Link to = '/search/characters' className ={style.link}>
-            Search
-            </Link>
-            <Link to = '/about' className ={style.link}>
-            About
-            </Link>
-            <Link to = '/contact' className ={style.link}>
-            Contact
-            </Link>
+            <div className = {styles.childrenDivTwo}>
+                <h1 className = {styles.name}>Navigate</h1>
+                <div className = {styles.links}>
+                <Link to = '/' className = {styles.link}><h3>Home</h3></Link>
+                <Link to = '/' className = {styles.link}><h3>Search</h3></Link>
+                <Link to = '/' className = {styles.link}><h3>About</h3></Link>
+                <Link to = '/' className = {styles.link}><h3>Contact</h3></Link>
+                </div>
+                <h1 className = {styles.copyright}>© 2024 All Rights Reserved</h1>
             </div>
-
-            <div className = {style.floro}>
-                <h2 className = {style.titleFloro}>The Rick And Morty Proyect</h2>
-                <p>This was project was develop using The Rick and Morty API.</p>
+            <div className = {styles.childrenDivThree}>
+                <h1 className = {styles.name}>The Rick and Morty Proyect</h1>
+                <h3 className = {styles.grade}>Thanks rym api</h3>
             </div>
             </div>
-
-            <div>
-            <p className = {style.copyright}> © Copyright 2023 | All rights reserved.</p>
-            </div>
-
+            
         </footer>
-    )
-}
+    );
+};

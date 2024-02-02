@@ -1,8 +1,7 @@
 import React from 'react';
 import styles from './LocationCard.module.css';
 
-export default function LocationCard(props){
-    const { location } = props;
+export default function LocationCard({location}){
 
     return(
         <div>

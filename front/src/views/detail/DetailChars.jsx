@@ -3,19 +3,21 @@ import styles from './DetailChars.module.css';
 import NavBar from '../../components/NavBar/NavBar';
 import Footer from '../../components/Footer/Footer';
 import { useParams } from 'react-router-dom';
-import { useEffect } from 'react';
-import { charactersDetail } from '../../redux/actions';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 
 export default function DetailChars() {
-    const dispatch = useDispatch();
     const { id } = useParams();
-    useEffect(() => {
-        dispatch(charactersDetail(id));
-    }, []);
-    const character = useSelector(state => state.charactersDetail);
+    const characters = useSelector(state => state.allCharacters);
+    const [ charToRender, setCharToRender ] = useState([]);
+    useEffect( () => {
+        if(characters){
+            let value = characters.find((element) => element.id == id);
+            setCharToRender(value);
+            };
+    }, [characters]);
+
     const conditionalRender = function (status) {
         if (status == 'Alive') {
             return (
@@ -38,22 +40,25 @@ export default function DetailChars() {
             return `Type: ${type}`
         };
     };
-    console.log(character);
+    console.log(characters);
     return (
         <div className={styles.detailDiv}>
             <NavBar />
             <div className={styles.detailDiv}>
-                <div className={styles.cardContainer}>
-                    <h1>{character.name}</h1>
-                    <img className={styles.img} src={character.image} alt={character.name} />
-                    <h2>Identifier: {character.id}</h2>
-                    <h2>Condition: {conditionalRender(character.status)}</h2>
-                    <h2>Location: {character.location}</h2>
-                    <h2>Origin: {character.origin}</h2>
-                    <h2>Specie: {character.species}</h2>
-                    <h2>{typeValidator(character.type)}</h2>
-                    <a href ={character.url}>JSON</a>
-                </div>
+            { charToRender ?
+                            <div className={styles.cardContainer}>                    
+                            <h1>{charToRender.name}</h1>
+                            <img className={styles.img} src={charToRender.image} alt={charToRender.name} />
+                            <h2>Identifier: {charToRender.id}</h2>
+                            <h2>Condition: {conditionalRender(charToRender.status)}</h2>
+                            <h2>Location: {charToRender.location}</h2>
+                            <h2>Origin: {charToRender.origin}</h2>
+                            <h2>Specie: {charToRender.species}</h2>
+                            <h2>{typeValidator(charToRender.type)}</h2>
+                            <a href ={charToRender.url}>JSON</a>
+                        </div>
+                        : null
+            }
             </div>
             <Footer />
         </div>

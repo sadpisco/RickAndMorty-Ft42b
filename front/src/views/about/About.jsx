@@ -7,11 +7,14 @@ export default function About (){
     return (
         <div className = {styles.divAbout}>
             <NavBar />
-            <div className = {styles.containerAbout}>
+            <div className = {styles.divOne}>
             <h1>Hello from About</h1>
 
             </div>
-            <Footer className = {styles.futer}/>
+            <div className = {styles.divTwo}>
+                
+            </div>
+            <Footer />
         </div>
     )
 }

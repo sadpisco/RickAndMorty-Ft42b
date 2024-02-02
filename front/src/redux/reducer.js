@@ -1,42 +1,33 @@
-import { FIRST_CHARACTERS, FIRST_LOCATIONS, FIRST_EPISODES, CHAR_BY_ID, EMPTY_CHARS, RESTORE_CHARS, LANDING_CHARACTERS, CHAR_DETAIL } from "./actions"
+import { ALL_CHARACTERS, ALL_EPISODES, ALL_LOCATIONS, PAGINATION_CHARACTERS, FIRST_CHARACTERS, ADD_CHARACTER} from "./actions"
 
 const initialState = {
-    firstCharacters: [],
-    characters: [],
-    charactersDetail: [],
-    episodes: [],
-    locations: []
-}
+    allCharacters: [],
+    paginatedCharacters: [],
+    searchCharacters: [],
+    allEpisodes: [],
+    allLocations: []
+};
 
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
+        case ALL_CHARACTERS:
+            return { ...state, allCharacters: action.payload};
+        case PAGINATION_CHARACTERS:
+            let firstValue = (action.payload.page - 1) * action.payload.cardsPerPage;
+            let secondValue = action.payload.page * action.payload.cardsPerPage;
+            let result = state.allCharacters?.slice(firstValue, secondValue);
+            return { ...state, paginatedCharacters: result};
         case FIRST_CHARACTERS:
-            if(state.firstCharacters.length == 0){
-                return { ...state, firstCharacters: action.payload};
-            } else if (!state.firstCharacters.length == 0){
-                return { ...state };
-            };
-        case CHAR_BY_ID:
-            const result = state.firstCharacters.find((element)=> element.id == action.payload.id);
-            if(result == undefined){
-                state.firstCharacters.unshift(action.payload);
-                return { ...state };
-            } else {
-                alert(`Character number ${action.payload.id} has already been added`);
-                return { ...state };
-            }
-        case EMPTY_CHARS:
-            return { ...state, firstCharacters: []};
-        case RESTORE_CHARS:
-            return { ...state, firstCharacters: action.payload};
-        case LANDING_CHARACTERS:
-            return { ...state, characters: action.payload};
-        case CHAR_DETAIL:
-            return { ...state, charactersDetail: action.payload};
-        case FIRST_LOCATIONS:
-            return { ...state,  locations: action.payload };
-        case FIRST_EPISODES:
-            return { ...state, episodes: action.payload};
+            return { ...state, searchCharacters: action.payload};
+        case ADD_CHARACTER:
+            let filtered = state.allCharacters?.find((element) => element.id == action.payload);
+            state.searchCharacters.unshift(filtered);
+            return { ...state};
+            
+        case ALL_EPISODES:
+            return { ...state, allEpisodes: action.payload};
+        case ALL_LOCATIONS:
+            return { ...state, allLocations: action.payload};
         default:
             return {
                 ...state,

@@ -9,61 +9,93 @@
     position: relative;
     background-color: rgba(77, 77, 77, 0.825);
     display: flex;
+    flex-direction: row;
     border-radius: 10px;
     max-width: 400px;
     min-width: 400px;
     max-height: 200px;
+    min-height: 200px;
     border-style: solid;
-    border-width: 6px;
+    border-width: 4px;
     border-color: black;
     margin: 20px;
+    color: white;
 }
 
 .cardContainer:hover {
     box-shadow: 0px 0px 15px 0px rgb(0, 255, 30);
-    cursor: pointer;
+}
+.divButtons{
+    /* width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    gap: 2%;
+    z-index: 3; */
+    position: absolute;
+    top: 3px;
+    right: 3px;
 }
 
 .img {
-    position: relative;
-    max-width: 200px;
-    max-height: 190px;
-    border-radius: 10px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
+    max-width: 192px;
+    max-height: 90%;
+    min-width: 192px;
+    min-height: 90%;
+    border-radius: 5px;
+    /* border-style: solid;
+    border-width: 6px;
+    border-color: black; */
 
 }
 
 .info {
     font-family: 'Patrick Hand', sans-serif;
+    width: 50%;
+    height: 190px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .status {
     font-family: 'Space Grotesk', sans-serif;
-    text-align: center;
+    text-align:start;
     font-size: 16px;
-    margin-left: 10px;
+    width: 95%;
 }
 
 .title {
     font-family: 'Patrick Hand', sans-serif;
-    font-size: 22px;
+    font-size: 20px;
     margin-top: 2px;
     cursor: pointer;
+
+    width: 90%;
+    text-align:start;
 }
 
 .text {
     position: relative;
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 16px;
-    margin: 10px;
+    font-size: 15px;
     align-items: center;
-    text-align: center;
+    text-align:start;
+    width: 90%;
 
 
 }
 
 .title:hover {
     color: rgb(70, 225, 80)
+}
+
+.btnCard{
+    background-color: black;
+    margin-right: 2px;
+    border-radius: 5px;
+    padding: 1px;
+    box-shadow: 0px 0px 5px 0px black;
 }

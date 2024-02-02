@@ -1,28 +1,25 @@
 import axios from 'axios';
 //CHARACTER ACTIONS
+export const ALL_CHARACTERS = 'ALL_CHARACTERS';
+export const PAGINATION_CHARACTERS = 'PAGINATION_CHARACTERS';
 export const FIRST_CHARACTERS = 'FIRST_CHARACTERS';
-export const LANDING_CHARACTERS = 'LANDING_CHARACTERS';
-export const CHAR_BY_ID = 'CHAR_BY_ID';
-export const CHAR_DETAIL = 'CHAR_DETAIL';
-export const EMPTY_CHARS = 'EMPTY_CHARS';
-export const RESTORE_CHARS = 'RESTORE_CHARS';
+export const ADD_CHARACTER = 'ADD_CHARACTER';
 
 //LOCATION ACTIONS
-export const FIRST_LOCATIONS = 'FIRST_LOCATIONS';
+export const ALL_LOCATIONS = 'ALL_LOCATIONS';
 
 //EPISODE ACTIONS
-export const FIRST_EPISODES = 'FIRST_EPISODES';
+export const ALL_EPISODES = 'ALL_EPISODES';
 
 //CHARACTERS FUNCTIONS
-export function landingCharacters(){
-    const endPoint = `http://localhost:3015/first20Characters`;
+export function allCharacters(){
+    const endPoint = `http://localhost:3015/characters`;
     return async (dispatch) => {
         try {
             const { data } = await axios.get(endPoint);
-            console.log(data);
             dispatch({
-                type: LANDING_CHARACTERS,
-                payload: data
+                type: ALL_CHARACTERS,
+                payload: data.foundCharacters
             });
         } catch (error) {
             console.log(error);
@@ -30,15 +27,14 @@ export function landingCharacters(){
         };
     };
 };
-
-export function firstCharacters(){    
-    const endPoint = `http://localhost:3015/first20Characters`;
+export function firstCharacters(){
+    const endPoint = `http://localhost:3015/firstCharacters`;
     return async (dispatch) => {
         try {
             const { data } = await axios.get(endPoint);
             dispatch({
                 type: FIRST_CHARACTERS,
-                payload: data
+                payload: data,
             });
         } catch (error) {
             console.log(error);
@@ -46,73 +42,31 @@ export function firstCharacters(){
         };
     };
 };
-
-export function charactersById(id){
-    const endPoint = `http://localhost:3015/IndividualCharacterId/${id}`;
-    return async (dispatch) => {
-        try {
-            const { data } = await axios.get(endPoint);
-            dispatch({
-                type: CHAR_BY_ID,
-                payload:data
-            });
-        } catch (error) {
-            console.log(error);
-            return {error: error.message};
-        };
+export function paginatedCharacters(page, cardsPerPage){
+    return {
+        type: PAGINATION_CHARACTERS,
+        payload: {
+            page: page,
+            cardsPerPage: cardsPerPage,
+        }
     };
 };
-
-export function emptyChars (){
-    return{
-        type: EMPTY_CHARS,
-        payload: 1
+export function addCharacter(id){
+    return {
+        type: ADD_CHARACTER,
+        payload: id
     };
 };
-
-export function restoreChars(){
-    const endPoint = `http://localhost:3015/first20Characters`;
-    return async (dispatch) => {
-        try {
-            const { data } = await axios.get(endPoint);
-            console.log(data);
-            dispatch({
-                type: RESTORE_CHARS,
-                payload: data
-            });
-        } catch (error) {
-            console.log(error);
-            return {error: error.message};
-        };
-    };
-};
-
-export function charactersDetail(id){
-    const endPoint = `http://localhost:3015/IndividualCharacterId/${id}`;
-    return async (dispatch) => {
-        try {
-            const { data } = await axios.get(endPoint);
-            dispatch({
-                type: CHAR_DETAIL,
-                payload:data
-            });
-        } catch (error) {
-            console.log(error);
-            return {error: error.message};
-        };
-    };
-
-}
 
 //LOCATIONS
-export function firstLocations(){
-    const endPoint = `http://localhost:3015/first20Locations`;
+export function allLocations(){
+    const endPoint = `http://localhost:3015/locations`;
     return async (dispatch) => {
         try {
             const { data } = await axios.get(endPoint);
             dispatch({
-                type: FIRST_LOCATIONS,
-                payload: data
+                type: ALL_LOCATIONS,
+                payload: data.foundLocations
             });
         } catch (error) {
             console.log(error);
@@ -122,9 +76,18 @@ export function firstLocations(){
 };
 
 //EPISODES
-export function firstEpisodes(){
-    return{
-        type: FIRST_LOCATIONS,
-        payload: 2,
+export function allEpisodes(){
+    const endPoint = `http://localhost:3015/episodes`;
+    return async (dispatch) => {
+        try {
+            const { data } = await axios.get(endPoint);
+            dispatch({
+                type: ALL_EPISODES,
+                payload: data.foundEpisodes
+            });
+        } catch (error) {
+            console.log(error);
+            return {error: error.message};
+        };
     };
 };

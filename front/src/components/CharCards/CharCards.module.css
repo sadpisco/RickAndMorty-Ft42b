@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 .divCharCards{
     position: relative;
-    background-color: rgb(30, 30, 30);
+    background-color: rgba(33, 33, 33, 0.733);
     margin-bottom: 50px;
+    width: 100vw;
+    min-height: 30vh;
 }
 
 .cardsContainer{
@@ -22,4 +24,9 @@
 }
 .floroContainer{
     padding-top:20px;
+}
+.infoMsg{
+    font-family: 'Patrick Hand', sans-serif;
+    text-align: center;
+    min-width: 200px;
 }

@@ -1,7 +1,14 @@
 
 .divLanding {
-    position: relative;
-    background-color: rgb(30, 30, 30);
+    background-color: rgb(33, 33, 33);
+    min-height: 100vh;
+    /* width: 101.20vw; */
+    width: 100vw;
+    max-width: 140vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .divOne {
@@ -9,29 +16,31 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size:cover;
-    position: relative;
-    top: -70px;
     z-index: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 450px;
-
+    width: 100%;
+    height: 55vh;
 
 }
 .selected{
-    position: relative;
     background-color: rgba(30, 30, 30, 0.756);
-    width: 1100px;
-    height: 280px;
-    border-radius: 50px;
-    margin-top: 20px;
+    width: 80vw;
+    max-width: 1100px;
+    height: auto;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .title{
     font-family: 'Patrick Hand', sans-serif;
     color: rgb(255, 255, 255);
     font-size: 50px;
+    text-align: center;
 
 }
 
@@ -39,12 +48,14 @@
     font-family: 'Patrick Hand', sans-serif;
     font-size: 25px;
     margin: 0 50px;
+    width: 90%;
+    text-align: center;
 }
 
 .btnGo{
     position: relative;
     font-size: 20px;
-    margin: 25px;
+    margin: 10px;
     height: 45px;
     width: 150px;
     color: white;
@@ -59,10 +70,36 @@
     box-shadow: 0px 0px 15px 0px rgb(0, 255, 30);
 }
 .divTwo{
-    position: relative;
-    top: -50px;
+margin: 3vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: auto;
+min-height: 60vh;
 }
 .divTwoTitle{
     font-family: 'Patrick Hand', sans-serif;
     font-size: 50px;
+    text-align: center;
+}
+
+.divThree{
+    background-color: blue;
+    width: 100%;
+    height: 30vh;
+}
+
+@media only screen and (max-width: 768px) {
+    .selected{
+        margin-top: 12vh;
+        padding: 2vh;
+    }
+    .title{
+        font-size: 35px;
+    }
+    .divOne{
+        height: auto;
+        padding-bottom: 2vh;
+    }
 }
