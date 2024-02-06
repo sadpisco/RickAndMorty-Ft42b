@@ -25,7 +25,12 @@ module.exports = (sequelize) => {
             type: DataTypes.INTEGER,
 
         },
-
+        description: {
+            type: DataTypes.STRING,
+        },
+        episodeImg: {
+            type: DataTypes.STRING,
+        }
         //Relaciones con tabla characters
     }, {timestamps: false})
     // sequelize.sync({alter: true});
