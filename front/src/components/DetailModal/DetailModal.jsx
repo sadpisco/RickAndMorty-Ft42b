@@ -47,10 +47,6 @@ const DetailModal = ({ character, detail, setDetail }) => {
           <p>Type</p>
         <p>{character.type}</p>
         </div>
-        {/* <div className={styles.modalContainer}>
-          <p>JSON</p>
-        <a href = {character.url}>{character.name}</a>
-        </div> */}
             </div>
         </div>
     );

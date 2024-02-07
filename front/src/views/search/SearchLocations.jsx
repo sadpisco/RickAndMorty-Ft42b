@@ -6,12 +6,14 @@ import LocationCards from '../../components/LocationCards/LocationCards';
 import { useSelector } from 'react-redux';
 
 export default function SearchLocations(){
+    const locations = useSelector(state => state.allLocations);
+    console.log(locations);
     
     return(
         <div>
             <NavBar />
             <h1>Hello from Search Locations</h1>
-            <LocationCards />
+            <LocationCards locations = {locations}/>
             <Footer />
         </div>
     )

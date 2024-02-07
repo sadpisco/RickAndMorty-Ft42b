@@ -1,0 +1,74 @@
+.fondo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -10;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed; 
+    background: radial-gradient(125% 125% at 50% 10%, #000 40%, #63e 100%);
+}
+
+.searchEpisodesContainer{
+    background-color: transparent;
+    width: 100%;
+    min-height: 100vh;
+}
+.divSearch{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 8vh;
+
+}
+.searchInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: 90%;
+}
+.divSearchTitle{
+    font-family: 'Patrick Hand', sans-serif;
+    font-size: 45px;
+    width: 90%;
+    padding-top: 25px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: rgb(0, 255, 60) 1px 0 10px;
+    color: greenyellow;
+}
+
+.divSearchText{
+    font-family: 'Patrick Hand', sans-serif;
+    font-size: 30px;
+    margin-bottom: -5px;
+}
+.divSearchLinks{
+    color: white;
+    font-size: 20px;
+    width: auto;
+    text-align: center;
+    text-decoration: none;
+
+}
+.h1{
+    font-family: 'Patrick Hand', sans-serif;
+}
+.divSearchLinks:hover{
+    text-shadow: rgb(0, 255, 60) 1px 0 10px;
+    color: greenyellow;
+}
+.Links{
+    display: flex;
+    place-items: center;
+    gap: 5vw;
+}

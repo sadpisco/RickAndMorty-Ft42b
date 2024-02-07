@@ -69,9 +69,6 @@ export default function Search() {
             <input type='search' placeholder="Character's ID" onChange={inputValue} className={styles.input}></input>
             <button onClick={bringChar} className = {styles.searchBtn}><SearchIcon /></button>
             </div>
-            <div className = {styles.divFilters}>
-                <h1>Filters</h1>
-            </div>
         </div>
             <div className={styles.divCards}>
                 <h1 className={styles.divCardsTitle}>Your Characters</h1>

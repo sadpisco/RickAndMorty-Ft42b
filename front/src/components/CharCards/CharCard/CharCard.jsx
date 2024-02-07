@@ -7,12 +7,12 @@ import ClearIcon from '@mui/icons-material/Clear';
 import SearchIcon from '@mui/icons-material/Search';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import Brightness1Icon from '@mui/icons-material/Brightness1';
 
 export default function CharCard({character, deleteChar, isSearchView, favHandler}) {
     const [ detail, setDetail ] = useState(false);
     const [ favorite, setFavorite ] = useState(false);
     const clickHandler = function(){
-        console.log(detail);
         setDetail(!detail);
     };
 
