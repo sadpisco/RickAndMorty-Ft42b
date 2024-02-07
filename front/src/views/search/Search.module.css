@@ -125,3 +125,15 @@
     justify-content: center;
     align-items: center;
 }
+.favoritesFilter{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 160px;
+}
+.filterLabel{
+    font-family: 'Patrick Hand', sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+}

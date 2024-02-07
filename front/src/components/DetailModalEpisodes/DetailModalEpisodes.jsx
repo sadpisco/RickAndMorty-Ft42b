@@ -22,7 +22,6 @@ export default function DetailModalEpisodes({ epToRender, detail, setDetail }) {
                     <img className={styles.img} src={epToRender.episodeImg} alt={epToRender.id} />
                     <div className={styles.modalInfo}>
                         <div className={styles.descriptionContainer}>
-                            <p>Description:</p>
                             <p>{epToRender.description}</p>
                         </div>
                         <div className={styles.modalContainer}>

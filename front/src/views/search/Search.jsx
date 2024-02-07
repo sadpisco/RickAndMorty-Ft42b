@@ -7,12 +7,15 @@ import { Link } from 'react-router-dom';
 import {  useSelector } from 'react-redux';
 import { useState } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
+import Switch from '@mui/material/Switch';
+
 
 export default function Search() {
     let isSearchView = true;
     const characters = useSelector((state) => state.allCharacters);
     const first20Characters = useSelector((state) => state.searchCharacters);
     const [ charsToRender, setChars ] = useState(first20Characters);
+    const [ estate, setEstate ] = useState(charsToRender);
     const [ favorites, setFavorites] = useState([]);
     const [ characterId, setCharacterId ] = useState();
     const inputValue = function (event) {
@@ -25,7 +28,10 @@ export default function Search() {
         } else {
             let founded = characters.find((element) => element.id == characterId);
         let repeat = charsToRender.find((element) => element.id == founded.id);
-        if(repeat === undefined) return setChars( prevArray => [ founded, ...prevArray ]);
+        if(repeat === undefined){
+            setEstate( prevArray => [founded, ...prevArray]);
+            setChars( prevArray => [ founded, ...prevArray ]);
+        }
         else if (repeat){
             alert('This character has already been displayed on the screen.');
         };
@@ -45,7 +51,16 @@ export default function Search() {
             return setFavorites(result);
         };
     };
-    console.log(favorites);
+    console.log(estate);
+    const renderFavs = function(){
+        if (favorites.length === charsToRender.length){
+            setChars(estate);
+        } else if (favorites.length > 0){
+            setChars(favorites)
+        } else if (favorites.length == 0){
+            alert('No Favorites has been selected.')
+        }
+    };
 
     return (
         <div className={styles.searchContainer}>
@@ -69,6 +84,19 @@ export default function Search() {
             <input type='search' placeholder="Character's ID" onChange={inputValue} className={styles.input}></input>
             <button onClick={bringChar} className = {styles.searchBtn}><SearchIcon /></button>
             </div>
+                <div className={styles.divFilters}>
+                    <div className={styles.favoritesFilter}>
+                        <label className = {styles.filterLabel}>Favorites</label>
+                        <Switch
+                            sx={{
+                                backgroundColor: 'black',
+                                borderRadius: '20px',
+                            }}
+                            onChange={renderFavs}
+                            color="success"
+                        />
+                    </div>
+                </div>
         </div>
             <div className={styles.divCards}>
                 <h1 className={styles.divCardsTitle}>Your Characters</h1>
