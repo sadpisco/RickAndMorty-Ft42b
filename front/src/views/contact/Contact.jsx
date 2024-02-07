@@ -5,9 +5,11 @@ import Footer from '../../components/Footer/Footer';
 
 export default function Contact (){
     return (
-        <div>
+        <div className = {styles.contactContainer}>
             <NavBar />
-            <h1>Hello from Contact</h1>
+            <div className = {styles.divOne}>
+
+            </div>
             <Footer />
         </div>
     )

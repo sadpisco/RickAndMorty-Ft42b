@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './CardEpisodes.module.css';
 import { useState } from 'react';
 import DetailModalEpisodes from '../DetailModalEpisodes/DetailModalEpisodes';
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 
 const CardEpisodes = ({epToRender}) => {
   const [ detail, setDetail ] = useState(false);
@@ -19,10 +20,16 @@ function renderImage (episodeImg){
   return (
     <div className = {styles.cardEpisodeContainer} onClick = {clickHandler}>
       <img src = {renderImage(epToRender.episodeImg)} alt = {epToRender.id} className = {styles.img}/>
-      <div className = {styles.cardInfo}>
-      <h1 className = {styles.epName}>{epToRender.name}</h1>
-      <h3>Episode {epToRender.number}</h3>
-      </div>
+
+        <div className={styles.cardInfo}>
+          <h1 className={styles.epName}>{epToRender.name}</h1>
+          <h3>Episode {epToRender.number}</h3>
+          <button className={styles.infoBtn}><InfoOutlinedIcon sx = {{
+            height: '35px',
+            width: '35px',
+          }} /></button>
+        </div>
+
       <DetailModalEpisodes epToRender = {epToRender} detail={detail} setDetail={setDetail}/>
     </div>
   )

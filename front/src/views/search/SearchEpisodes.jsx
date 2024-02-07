@@ -7,12 +7,23 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import "../../tailwind.css";
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 
 
 export default function SearchEpisodes(){
     const episodes = useSelector(state => state.allEpisodes);
     const [ season, setSeason ] = useState(1);
-    const epToRender = episodes.filter(element => element.season == season);
+    const sorteada = episodes.sort((a, b) => {
+        if (a.id < b.id){
+            return -1;
+        } else if (a.id > b.id){
+            return 1;
+        } else {
+            return 0;
+        };
+    })
+    const epToRender = sorteada.filter(element => element.season == season);
     console.log(episodes, epToRender);
     function handleNext (){
         if (season < 5){
@@ -44,9 +55,11 @@ export default function SearchEpisodes(){
             <p className={styles.divSearchText}>There's 51 episodes in 5 seasons</p>
             </div>
             <div className = {styles.divEpisodes}>
-            <button onClick = {handlePrevious}>Previous</button>
-            <h1>Season {season}</h1>
-            <button onClick = {handleNext}>Next</button>
+                        <div className={styles.buttons}>
+                            <button className = {styles.paginationBtn} onClick={handlePrevious}><NavigateBeforeIcon/>Previous</button>
+                            <h1 className = {styles.h1}>Season {season}</h1>
+                            <button className = {styles.paginationBtn} onClick={handleNext}>Next<NavigateNextIcon/></button>
+                        </div>
             <ContainerEpisodes epToRender = {epToRender} season = {season}/>
             </div>
         </div>

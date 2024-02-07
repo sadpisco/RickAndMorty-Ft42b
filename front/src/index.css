@@ -560,6 +560,7 @@ video {
   align-items: center;
   justify-content: center;
   place-items: center;
+  overflow-x: hidden;
 }
 
 body {

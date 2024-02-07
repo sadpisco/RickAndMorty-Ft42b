@@ -1,17 +1,11 @@
 .fondo {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -10;
-    height: 100%;
-    width: 100%;
-    background-repeat: no-repeat;
+    width: 100vw;
+    min-height: 100vh;
+    background: radial-gradient(125% 125% at 50% 10%, #000 40%, #63e 100%); 
+    background-repeat:no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size:cover;
     background-attachment: fixed; 
-    background: radial-gradient(125% 125% at 50% 10%, #000 40%, #63e 100%);
 }
 
 .searchEpisodesContainer{
@@ -62,6 +56,8 @@
 }
 .h1{
     font-family: 'Patrick Hand', sans-serif;
+    font-size: 42px;
+    min-width: 140px;
 }
 .divSearchLinks:hover{
     text-shadow: rgb(0, 255, 60) 1px 0 10px;
@@ -72,3 +68,37 @@
     place-items: center;
     gap: 5vw;
 }
+
+
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5vh;
+    padding: 3vh;
+    
+}
+
+.paginationBtn{
+    padding: 1vh;
+    width: auto;
+    font-size: 18px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    background-color: black;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    margin: 1vh;
+}
+.paginationBtn:hover{
+    color: rgb(0, 255, 30);
+    text-shadow:  rgb(0, 255, 30) 1px 0 10px;
+}
+/* .divEpisodes{
+    max-width: 95vw;
+    background-color: #63e;
+} */

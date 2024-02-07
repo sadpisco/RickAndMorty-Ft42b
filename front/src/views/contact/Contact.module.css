@@ -1,0 +1,12 @@
+.contactContainer {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('../../assets/wallpapers/1564031.jpg');
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size:cover;
+    background-attachment: fixed; 
+}
+.divOne{
+    min-height: 90vh;
+}

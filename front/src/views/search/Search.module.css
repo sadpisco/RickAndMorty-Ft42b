@@ -13,6 +13,7 @@
     background-repeat:no-repeat;
     background-position: center;
     background-size:cover;
+    background-attachment: fixed; 
 }
 .divSearch{
     width: 100%;
@@ -111,6 +112,7 @@
 }
 .h1{
     font-family: 'Patrick Hand', sans-serif;
+    font-size: 45px;
 }
 .divSearchLinks:hover{
     text-shadow: rgb(0, 255, 60) 1px 0 10px;
