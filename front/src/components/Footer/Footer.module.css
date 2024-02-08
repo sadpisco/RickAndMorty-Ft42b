@@ -5,11 +5,12 @@
     width: 100%;
     position: static;
     height: auto;
+    padding: 2vh;
     /* height: 140px; */
     bottom: 0px;
     left: 0px;
-    box-shadow: 0px 0px 20px 2px rgb(0, 255, 30);
-    background-color: rgba(32, 32, 32, 0.781);
+    /* box-shadow: 0px 0px 20px 2px rgb(0, 255, 30); */
+    background-image: radial-gradient(circle at 50% 300px, #0c1c0ddf, #000);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,12 +56,13 @@
     justify-content: space-between;
 }
 .childrenDivThree{
-    height: 80px;
+    height: 100%;
     width: 33%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+    gap: 3vh;
 }
 
 .links{
@@ -115,4 +117,7 @@
         visibility: hidden;
         position: absolute;
     }
+}
+.aLink:hover{
+    color: rgb(0, 255, 0);
 }
