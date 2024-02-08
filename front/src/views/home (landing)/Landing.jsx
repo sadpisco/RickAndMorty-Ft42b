@@ -41,9 +41,6 @@ export default function Landing (){
                 <h1 className={styles.divTwoTitle}>Most popular characters</h1>
                 <ContainerCards characters={filtered} initialPage={initialPage} charsPerPage={charsPerPage} numberOfPages={numberOfPages} />
             </div>
-            <div className = {styles.divThree}>
-
-            </div>
             <Footer />
         </div>
     );

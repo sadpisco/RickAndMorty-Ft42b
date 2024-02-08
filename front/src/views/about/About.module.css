@@ -1,7 +1,10 @@
 .divAbout {
     min-height: 100vh;
     width: 100vw;
-    background-image: url('../../assets/Outer-Space-Wallpaper.jpg');
+    /* background-image: url('../../assets/Outer-Space-Wallpaper.jpg'); */
+    background-color: #000;
+    /* background-image: radial-gradient(ellipse at 50% -20%, rgba(120, 119, 198, 0.3), rgba(255, 255, 255, 0)); */
+    background-image: radial-gradient(circle at 50% 300px, #4a4a4adf, #000);
     background-repeat: no-repeat;
     background-position:center;
     background-size: cover;
@@ -12,12 +15,69 @@
 }
 
 .divOne {
-    min-height: 90vh;
+    height: auto;
+    min-height: 25vh;
+    margin-top: 15vh;
+    width: 90%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+.titleDivOne{
+    font-family: 'Patrick Hand', sans-serif;
+    font-size: 35px;
+    width: 80%;
+    text-align: center;
+    margin-bottom: 1vh;
+    font-weight: 700;
+}
+.textDivOne{
+    font-family: 'Patrick Hand', sans-serif;
+    font-size: 22px;
     width: 100%;
+    color: white;
+    text-align: justify;
+}
+.divTwo{
+
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3vh;
+    margin-bottom: 10vh;
+}
+.titleDivTwo{
+    font-family: 'Patrick Hand', sans-serif;
+    font-size: 35px;
+    text-align: center;
+    font-weight: 700;
+    padding: 3vh;
+}
+.img{
+    max-width: 850px;
+    width: 90%;
+    height: 55vh;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+    .img{
+        height: 30vh;
+    }
+}
+.divThree{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-
-
+.titleDesplegables{
+    font-size: 18px;
+    font-weight: 700;
+}
