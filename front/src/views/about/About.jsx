@@ -59,92 +59,93 @@ export default function About (){
         setActiveStep(0);
       };
     return (
-        <div className = {styles.divAbout}>
-            <NavBar />
-            <div className = {styles.divOne}>
-            <h1 className = {styles.titleDivOne}>About the Rick And Morty Project</h1>
-            <p className = {styles.textDivOne}>This project was designed and develop in order to create a portfolio app to display FrontEnd and BackEnd proficient knowledge. The main purpose of this application is that the user could feel a really good User-Interface experience. It was developed using several technologies, using React as the web Framework and written in JavaScript.</p>
-            </div>
-            <div className = {styles.divTwo}>
-                <h1 className = {styles.titleDivTwo}>Map of Technologies Used</h1>
-                <img src = {Mapa} alt = 'mapa' className = {styles.img}/>
-            </div>
-            <div className = {styles.divThree}>
-            <Box sx={{ 
-                maxWidth: 700,
-                width: '95%',
-                paddingBottom: '5vh',
-                color: 'white',
-                 }}>
-      <Stepper activeStep={activeStep} orientation="vertical">
-        {steps.map((step, index) => (
-          <Step key={step.label}
-          sx = {{
-            color: 'white',
-            fontSize: '20px',
-            fontWeight: '700',
-
-          }}
-          >
-            <StepLabel
-              optional={
-                index === 6 ? (
-                  <Typography variant="caption">Last step</Typography>
-                ) : null
-              }
-              sx = {{
-                backgroundColor: 'white',
-                width: '200px',
-                padding: '10px',
-                margin: '15px',
-                borderRadius: '10px',
-                boxShadow: '0px 0px 10px 0px black',
-              }}
-            ><p className = {styles.titleDesplegables}>{step.label}</p>              
-            </StepLabel>
-            <StepContent>
-              <Typography sx = {{
-                fontWeight: '500',
-
-              }}>{step.description}</Typography>
-              <Box sx={{ mb: 2 }}>
-                <div>
-                  <Button
-                    variant="contained"
-                    onClick={handleNext}
-                    sx={{ mt: 1, mr: 1 }}
-                  >
-                    {index === steps.length - 1 ? 'Finish' : 'Continue'}
-                  </Button>
-                  <Button
-                    disabled={index === 0}
-                    onClick={handleBack}
-                    sx={{ mt: 1, mr: 1 }}
-                  >
-                    Back
-                  </Button>
-                </div>
-              </Box>
-            </StepContent>
-          </Step>
-        ))}
-      </Stepper>
-      {activeStep === steps.length && (
-        <Paper square elevation={0} sx={{ 
-            p: 3,
-            borderRadius: '15px',
-            margin: '20px',
-            }}>
-          <Typography>All Technologies Reviewed</Typography>
-          <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
-            Reset
-          </Button>
-        </Paper>
-      )}
-    </Box>
-
-            </div>
-            <Footer />
+      <div className={styles.divAbout}>
+        <NavBar />
+        <div className={styles.divOne}>
+          <h1 className={styles.titleDivOne}>About the Rick And Morty Project</h1>
+          <p className={styles.textDivOne}>This project was designed and develop in order to create a portfolio app to display FrontEnd and BackEnd proficient knowledge. The main purpose of this application is that the user could feel a really good User-Interface experience. It was developed using several technologies, using React as the web Framework and written in JavaScript.</p>
         </div>
+        <div className={styles.divTwo}>
+          <h1 className={styles.titleDivTwo}>FrontEnd & BackEnd Technologies Map</h1>
+          <img src={Mapa} alt='mapa' className={styles.img} />
+        </div>
+        <div className={styles.divThree}>
+          <h1 className={styles.titleDivTwo}>Importance</h1>
+          <Box sx={{
+            maxWidth: 870,
+            width: '95%',
+            paddingBottom: '5vh',
+            color: 'white',
+          }}>
+            <Stepper activeStep={activeStep} orientation="vertical">
+              {steps.map((step, index) => (
+                <Step key={step.label}
+                  sx={{
+                    color: 'white',
+                    fontSize: '20px',
+                    fontWeight: '700',
+
+                  }}
+                >
+                  <StepLabel
+                    optional={
+                      index === 6 ? (
+                        <Typography variant="caption">Last step</Typography>
+                      ) : null
+                    }
+                    sx={{
+                      backgroundColor: 'white',
+                      width: '200px',
+                      padding: '10px',
+                      margin: '15px',
+                      borderRadius: '10px',
+                      boxShadow: '0px 0px 10px 0px black',
+                    }}
+                  ><p className={styles.titleDesplegables}>{step.label}</p>
+                  </StepLabel>
+                  <StepContent>
+                    <Typography sx={{
+                      fontWeight: '500',
+
+                    }}>{step.description}</Typography>
+                    <Box sx={{ mb: 2 }}>
+                      <div>
+                        <Button
+                          variant="contained"
+                          onClick={handleNext}
+                          sx={{ mt: 1, mr: 1 }}
+                        >
+                          {index === steps.length - 1 ? 'Finish' : 'Continue'}
+                        </Button>
+                        <Button
+                          disabled={index === 0}
+                          onClick={handleBack}
+                          sx={{ mt: 1, mr: 1 }}
+                        >
+                          Back
+                        </Button>
+                      </div>
+                    </Box>
+                  </StepContent>
+                </Step>
+              ))}
+            </Stepper>
+            {activeStep === steps.length && (
+              <Paper square elevation={0} sx={{
+                p: 3,
+                borderRadius: '15px',
+                margin: '20px',
+              }}>
+                <Typography>All Technologies Reviewed</Typography>
+                <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
+                  Reset
+                </Button>
+              </Paper>
+            )}
+          </Box>
+
+        </div>
+        <Footer />
+      </div>
     )
 }
