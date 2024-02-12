@@ -3,12 +3,11 @@ import styles from './LocationCards.module.css';
 import { useSelector } from 'react-redux';
 import LocationCard from './LocationCard/LocationCard';
 
-export default function LocationCards({locations}){
+export default function LocationCards({locationsToRender}){
 
     return(
         <div className = {styles.locationCardsContainer}>
-            <h1>Hello from LocationCards</h1>
-            {locations?.map((location) => <LocationCard  location={location} />)}
+            {locationsToRender?.map((locationsToRender) => <LocationCard  locationsToRender={locationsToRender} key = {locationsToRender.id}/>)}
         </div>
     )
 }

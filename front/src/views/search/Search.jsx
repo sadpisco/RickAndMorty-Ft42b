@@ -24,7 +24,7 @@ export default function Search() {
     };
     const bringChar = function () {
         if (characterId > 826 || characterId <= 0){
-            alert('Id is out of range, please enter an Id between 0 and 826.');
+            alert('Id is out of range, please enter an Id between 1 and 826.');
         } else {
             let founded = characters.find((element) => element.id == characterId);
         let repeat = charsToRender.find((element) => element.id == founded.id);
@@ -66,27 +66,27 @@ export default function Search() {
         <div className={styles.searchContainer}>
             <NavBar />
             <div className={styles.divSearch}>
-                <div className = {styles.searchInfo}>
-            <h1 className={styles.divSearchTitle}>Search Characters</h1>
-            <p className={styles.divSearchText}>Or</p>
-            <div className = {styles.Links}>
-            <Link to='/search/locations' className={styles.divSearchLinks}>
-            <h1 className = {styles.h1}>Search Locations</h1>
-            </Link>
-            <Link to='/search/episodes' className={styles.divSearchLinks}>
-            <h1 className = {styles.h1}>Search Episodes</h1>
-            </Link>
-            </div>
-            <p className={styles.divSearchText}>There's 826 characters to search by ID</p>
-            <p className={styles.divSearchText}>To restart your characters, just reload the page</p>
-            </div>
-            <div className = {styles.inputAndBtn}>
-            <input type='search' placeholder="Character's ID" onChange={inputValue} className={styles.input}></input>
-            <button onClick={bringChar} className = {styles.searchBtn}><SearchIcon /></button>
-            </div>
+                <div className={styles.searchInfo}>
+                    <h1 className={styles.divSearchTitle}>Search Characters</h1>
+                    <p className={styles.divSearchText}>Or</p>
+                    <div className={styles.Links}>
+                        <Link to='/search/locations' className={styles.divSearchLinks}>
+                            <h1 className={styles.h1}>Search Locations</h1>
+                        </Link>
+                        <Link to='/search/episodes' className={styles.divSearchLinks}>
+                            <h1 className={styles.h1}>Search Episodes</h1>
+                        </Link>
+                    </div>
+                    <p className={styles.divSearchText}>There's 826 characters to search by ID</p>
+                    <p className={styles.divSearchText}>To restart your characters, just reload the page</p>
+                </div>
+                <div className={styles.inputAndBtn}>
+                    <input type='search' placeholder="Character's ID" onChange={inputValue} className={styles.input}></input>
+                    <button onClick={bringChar} className={styles.searchBtn}><SearchIcon /></button>
+                </div>
                 <div className={styles.divFilters}>
                     <div className={styles.favoritesFilter}>
-                        <label className = {styles.filterLabel}>Favorites</label>
+                        <label className={styles.filterLabel}>Favorites</label>
                         <Switch
                             sx={{
                                 backgroundColor: 'black',
@@ -97,10 +97,10 @@ export default function Search() {
                         />
                     </div>
                 </div>
-        </div>
+            </div>
             <div className={styles.divCards}>
                 <h1 className={styles.divCardsTitle}>Your Characters</h1>
-                <CharCards characters = {charsToRender} deleteChar = {deleteChar} isSearchView = {isSearchView} favHandler = {favHandler}/>
+                <CharCards characters={charsToRender} deleteChar={deleteChar} isSearchView={isSearchView} favHandler={favHandler} />
             </div>
             <Footer />
         </div>

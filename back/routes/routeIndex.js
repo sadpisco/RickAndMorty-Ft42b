@@ -11,6 +11,7 @@ const getAllLocations = require("../handlers/Locations/getAllLocations");
 const getAllEpisodes = require("../handlers/Episodes/getAllEpisodes");
 const firstCharacters = require("../handlers/Characters/firstCharacters");
 const putEpisode = require('../controllers/putEpisode');
+const getFirstLocations = require("../handlers/Locations/getFirstLocations");
 
 //MAIN LOBBY
 router.get('/', async(req, res) => {
@@ -40,6 +41,7 @@ router.put('/episodes', putEpisode);
 //FRONT REQUIREMENTS
 //Characters
 router.get('/firstCharacters', firstCharacters);
+router.get('/firstLocations', getFirstLocations);
 // router.get('/paginatedCharacters/:page', paginatedCharacters);
 
 module.exports = router;

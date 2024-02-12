@@ -37,34 +37,34 @@ export default function SearchEpisodes(){
     };
 
     return(
-        <div className = {styles.fondo}>
-        <div className = {styles.searchEpisodesContainer}>
-            <NavBar />
-            <div className={styles.divSearch}>
-                <div className = {styles.searchInfo}>
-            <h1 className={styles.divSearchTitle}>Search Episodes</h1>
-            <p className={styles.divSearchText}>Or</p>
-            <div className = {styles.Links}>
-            <Link to='/search/locations' className={styles.divSearchLinks}>
-            <h1 className = {styles.h1}>Search Locations</h1>
-            </Link>
-            <Link to='/search/characters' className={styles.divSearchLinks}>
-            <h1 className = {styles.h1}>Search Characters</h1>
-            </Link>
-            </div>
-            <p className={styles.divSearchText}>There's 51 episodes in 5 seasons</p>
-            </div>
-            <div className = {styles.divEpisodes}>
-                        <div className={styles.buttons}>
-                            <button className = {styles.paginationBtn} onClick={handlePrevious}><NavigateBeforeIcon/>Previous</button>
-                            <h1 className = {styles.h1}>Season {season}</h1>
-                            <button className = {styles.paginationBtn} onClick={handleNext}>Next<NavigateNextIcon/></button>
+        <div className={styles.fondo}>
+            <div className={styles.searchEpisodesContainer}>
+                <NavBar />
+                <div className={styles.divSearch}>
+                    <div className={styles.searchInfo}>
+                        <h1 className={styles.divSearchTitle}>Search Episodes</h1>
+                        <p className={styles.divSearchText}>Or</p>
+                        <div className={styles.Links}>
+                            <Link to='/search/locations' className={styles.divSearchLinks}>
+                                <h1 className={styles.h1}>Search Locations</h1>
+                            </Link>
+                            <Link to='/search/characters' className={styles.divSearchLinks}>
+                                <h1 className={styles.h1}>Search Characters</h1>
+                            </Link>
                         </div>
-            <ContainerEpisodes epToRender = {epToRender} season = {season}/>
+                        <p className={styles.divSearchText}>There's 51 episodes in 5 seasons</p>
+                    </div>
+                    <div className={styles.divEpisodes}>
+                        <div className={styles.buttons}>
+                            <button className={styles.paginationBtn} onClick={handlePrevious}><NavigateBeforeIcon />Previous</button>
+                            <h1 className={styles.h1}>Season {season}</h1>
+                            <button className={styles.paginationBtn} onClick={handleNext}>Next<NavigateNextIcon /></button>
+                        </div>
+                        <ContainerEpisodes epToRender={epToRender} season={season} />
+                    </div>
+                </div>
+                <Footer />
             </div>
-        </div>
-            <Footer />
-        </div>
         </div>
     )
 }
