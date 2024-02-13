@@ -1,7 +1,6 @@
 import styles from './About.module.css';
 import NavBar from '../../components/NavBar/NavBar';
 import Footer from '../../components/Footer/Footer';
-import Mapa from '../../assets/icons/Mapa.jpeg';
 import { useState } from 'react';
 import "../../tailwind.css";
 import Box from '@mui/material/Box';
@@ -67,7 +66,7 @@ export default function About (){
         </div>
         <div className={styles.divTwo}>
           <h1 className={styles.titleDivTwo}>FrontEnd & BackEnd Technologies Map</h1>
-          <img src={Mapa} alt='mapa' className={styles.img} />
+          <img src= 'https://res.cloudinary.com/dphpu225t/image/upload/v1707789564/Mapa_sstlvu.jpg' alt='mapa' className={styles.img} />
         </div>
         <div className={styles.divThree}>
           <h1 className={styles.titleDivTwo}>Importance</h1>
