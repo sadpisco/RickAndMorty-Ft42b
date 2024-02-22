@@ -16,7 +16,7 @@ const getFirstLocations = require("../handlers/Locations/getFirstLocations");
 //MAIN LOBBY
 router.get('/', async(req, res) => {
     try {
-        res.status(202).json({status: true, message: "Main Lobby"});
+        res.status(202).json({status: true, message: "Main Lobby :P"});
     } catch (error) {
         res.status(404).send({status: false, message: error.message});
     }
